@@ -2,6 +2,10 @@ package volandoAlto.interfaz;
 
 import volandoAlto.dominio.Idioma;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import javax.swing.JSpinner;
+import javax.swing.SpinnerDateModel;
 import org.apache.commons.lang3.StringUtils;
 
 /**
@@ -89,16 +93,16 @@ public class Operario extends javax.swing.JFrame {
         cmbDestino = new javax.swing.JComboBox();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        txtHoraSalida = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        txtMinutoSalida = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        txtHoraLlegada = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        txtMinutoLlegada = new javax.swing.JTextField();
         btnAplicarCambios = new javax.swing.JButton();
         chkDemorado = new javax.swing.JCheckBox();
         lblCambiosAplicados = new javax.swing.JLabel();
+        Date date = new Date();
+        SpinnerDateModel sm = new SpinnerDateModel(date,null,null,Calendar.HOUR_OF_DAY);
+        spnHoraSalida = new javax.swing.JSpinner(sm);
+        Date dateLlegada = new Date();
+        SpinnerDateModel smLlegada = new SpinnerDateModel(dateLlegada,null,null,Calendar.HOUR_OF_DAY);
+        spnHoraLlegada = new javax.swing.JSpinner(smLlegada);
         jPanel3 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
@@ -167,30 +171,7 @@ public class Operario extends javax.swing.JFrame {
 
         jLabel7.setText("Salida");
 
-        txtHoraSalida.setText("00");
-        txtHoraSalida.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtHoraSalidaActionPerformed(evt);
-            }
-        });
-
-        jLabel8.setText(":");
-
-        txtMinutoSalida.setText("00");
-        txtMinutoSalida.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtMinutoSalidaActionPerformed(evt);
-            }
-        });
-
         jLabel9.setText("LLegada");
-
-        txtHoraLlegada.setText("00");
-        txtHoraLlegada.setMinimumSize(new java.awt.Dimension(6, 21));
-
-        jLabel10.setText(":");
-
-        txtMinutoLlegada.setText("00");
 
         btnAplicarCambios.setText("Aplicar");
         btnAplicarCambios.addActionListener(new java.awt.event.ActionListener() {
@@ -202,6 +183,12 @@ public class Operario extends javax.swing.JFrame {
         chkDemorado.setText("Demorado");
 
         lblCambiosAplicados.setText("  ");
+
+        JSpinner.DateEditor de = new JSpinner.DateEditor(spnHoraSalida,"HH:mm");
+        spnHoraSalida.setEditor(de);
+
+        JSpinner.DateEditor deLlegada = new JSpinner.DateEditor(spnHoraLlegada,"HH:mm");
+        spnHoraLlegada.setEditor(deLlegada);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -240,21 +227,13 @@ public class Operario extends javax.swing.JFrame {
                                     .addComponent(cmbDestino, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addComponent(jLabel6)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtHoraSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtMinutoSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtHoraLlegada, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtMinutoLlegada, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel9))
+                                .addGap(26, 26, 26)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(spnHoraLlegada, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(spnHoraSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -286,15 +265,11 @@ public class Operario extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(txtHoraSalida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8)
-                    .addComponent(txtMinutoSalida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(spnHoraSalida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(txtHoraLlegada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10)
-                    .addComponent(txtMinutoLlegada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(spnHoraLlegada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -413,14 +388,6 @@ public class Operario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbOrigenActionPerformed
 
-    private void txtHoraSalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHoraSalidaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtHoraSalidaActionPerformed
-
-    private void txtMinutoSalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMinutoSalidaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtMinutoSalidaActionPerformed
-
     private void txtCapitanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCapitanActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCapitanActionPerformed
@@ -435,16 +402,24 @@ public class Operario extends javax.swing.JFrame {
 
     private void btnAplicarCambiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAplicarCambiosActionPerformed
         if (this.datosValidos()) {
+            Calendar calendarSalida = GregorianCalendar.getInstance(); // creates a new calendar instance
+            calendarSalida.setTime((Date)spnHoraSalida.getValue());   // assigns calendar to given date 
+            Calendar calendarLlegada = GregorianCalendar.getInstance(); // creates a new calendar instance
+            calendarLlegada.setTime((Date)spnHoraLlegada.getValue());   // assigns calendar to given date 
+            
+            
             ventanaCliente.aplicarCambios(this.txtCapitan.getText(),
                     this.txtCodigoVuelo.getText(),
                     this.cmbOrigen.getSelectedItem().toString(),
                     this.cmbDestino.getSelectedItem().toString(),
-                    this.txtHoraSalida.getText(),
-                    this.txtMinutoSalida.getText(),
-                    this.txtHoraLlegada.getText(),
-                    this.txtMinutoLlegada.getText(),
+                    calendarSalida.get(Calendar.HOUR_OF_DAY),
+                    calendarSalida.get(Calendar.MINUTE),
+                    calendarLlegada.get(Calendar.HOUR_OF_DAY),
+                    calendarLlegada.get(Calendar.MINUTE),
                     this.chkDemorado.isSelected());
             this.lblCambiosAplicados.setText("Cambios aplicados");
+            
+            
         }
         else {
             this.lblCambiosAplicados.setText("Formato incorrecto");
@@ -462,14 +437,10 @@ public class Operario extends javax.swing.JFrame {
         else if(this.cmbOrigen.getSelectedItem().toString().equalsIgnoreCase(this.cmbDestino.getSelectedItem().toString())) {
             valido = false;
         }
-        else if(this.txtHoraLlegada.getText().isEmpty() || this.txtMinutoLlegada.getText().isEmpty() || 
-                this.txtHoraLlegada.getText().length()!=2 || this.txtMinutoLlegada.getText().length()!=2 ||
-                !StringUtils.isNumeric(this.txtHoraLlegada.getText()) || !StringUtils.isNumeric(this.txtMinutoLlegada.getText())) {
+        else if(this.spnHoraSalida.getValue() != null) {
             valido = false;
         }
-        else if(this.txtHoraSalida.getText().isEmpty() || this.txtMinutoSalida.getText().isEmpty() || 
-                this.txtHoraSalida.getText().length()!=2 || this.txtMinutoSalida.getText().length()!=2 ||
-                !StringUtils.isNumeric(this.txtHoraSalida.getText()) || !StringUtils.isNumeric(this.txtMinutoSalida.getText())) {
+        else if(this.spnHoraLlegada.getValue() != null) {
             valido = false;
         }
         return valido;
@@ -488,7 +459,6 @@ public class Operario extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -496,7 +466,6 @@ public class Operario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JPanel jPanel1;
@@ -505,12 +474,10 @@ public class Operario extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel lblCambiosAplicados;
+    private javax.swing.JSpinner spnHoraLlegada;
+    private javax.swing.JSpinner spnHoraSalida;
     private javax.swing.JTextField txtCapitan;
     private javax.swing.JTextField txtCodigoVuelo;
-    private javax.swing.JTextField txtHoraLlegada;
-    private javax.swing.JTextField txtHoraSalida;
-    private javax.swing.JTextField txtMinutoLlegada;
-    private javax.swing.JTextField txtMinutoSalida;
     // End of variables declaration//GEN-END:variables
 
 }

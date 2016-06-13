@@ -125,22 +125,15 @@
                               </Group>
                               <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="txtHoraSalida" min="-2" pref="22" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="txtMinutoSalida" min="-2" pref="23" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtHoraLlegada" min="-2" pref="21" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="txtMinutoLlegada" min="-2" pref="23" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="spnHoraLlegada" min="-2" pref="83" max="-2" attributes="0"/>
+                                      <Component id="spnHoraSalida" min="-2" pref="83" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -183,16 +176,12 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtHoraSalida" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtMinutoSalida" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="spnHoraSalida" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtHoraLlegada" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtMinutoLlegada" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="spnHoraLlegada" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
@@ -297,48 +286,9 @@
             <Property name="text" type="java.lang.String" value="Salida"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtHoraSalida">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="00"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtHoraSalidaActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel8">
-          <Properties>
-            <Property name="text" type="java.lang.String" value=":"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtMinutoSalida">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="00"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtMinutoSalidaActionPerformed"/>
-          </Events>
-        </Component>
         <Component class="javax.swing.JLabel" name="jLabel9">
           <Properties>
             <Property name="text" type="java.lang.String" value="LLegada"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtHoraLlegada">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="00"/>
-            <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[6, 21]"/>
-            </Property>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel10">
-          <Properties>
-            <Property name="text" type="java.lang.String" value=":"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtMinutoLlegada">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="00"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnAplicarCambios">
@@ -358,6 +308,20 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="  "/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JSpinner" name="spnHoraSalida">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JSpinner(sm)"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="Date date = new Date();&#xa;SpinnerDateModel sm = new SpinnerDateModel(date,null,null,Calendar.HOUR_OF_DAY);"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="JSpinner.DateEditor de = new JSpinner.DateEditor(spnHoraSalida,&quot;HH:mm&quot;);&#xa;spnHoraSalida.setEditor(de);"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JSpinner" name="spnHoraLlegada">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JSpinner(smLlegada)"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="Date dateLlegada = new Date();&#xa;SpinnerDateModel smLlegada = new SpinnerDateModel(dateLlegada,null,null,Calendar.HOUR_OF_DAY);"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="JSpinner.DateEditor deLlegada = new JSpinner.DateEditor(spnHoraLlegada,&quot;HH:mm&quot;);&#xa;spnHoraLlegada.setEditor(deLlegada);"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>
