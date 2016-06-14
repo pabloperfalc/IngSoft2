@@ -1,5 +1,11 @@
 package volandoAlto.dominio;
 
+import java.awt.List;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 /**
  *
  * @author Br1
@@ -50,7 +56,7 @@ public class Idioma {
      *
      * @param idiomaActual
      */
-    public void setIdiomaActual(int idiomaActual) {
+    public void setIdiomaActual(int idiomaActual) throws FileNotFoundException {
         this.idiomaActual = idiomaActual;
         cargarPalabras();
     }
@@ -58,31 +64,49 @@ public class Idioma {
     /**
      *
      */
-    public void cargarPalabras() {
+    public void cargarPalabras() throws FileNotFoundException {
         switch (this.idiomaActual) {
             case 0:
-                this.palabras = new String[] {"Welcome.","Continue",
-                    "Flight Information","Captain", "Flight", "Departure",
-                    "Departure", "Estimated arrival time", "Destination", 
-                    "Time information", "and weather on arrival",
-                    "Welcome aboard.", "Flight attendant","Delayed","Select genre",
-                    "classical","Pop","Rock","Electronics","Reggae","Alternative",
-                    "Stopped","Playing"};
-                break;
+                String token1 = "";
+                String file_name = "C:/idiomas/ingles.txt";
+                Scanner inFile1 = new Scanner(new File(file_name)).useDelimiter(",\\s*");
+                ArrayList<String> temps = new ArrayList<String>();
+                while (inFile1.hasNext()) {
+                  // find next line
+                  token1 = inFile1.next();
+                  temps.add(token1);
+                }
+                inFile1.close();    
+                String[] tempsArray = temps.toArray(new String[0]);
+                this.palabras = tempsArray;
+                break;                
             case 1:
-                this.palabras = new String[] {"欢迎","繼續","航班信息","队长","机票",
-                    "出发","出发","预计抵达时间","目的地","时间信息","以及天气的到来",
-                    "欢迎乘坐。","主持人","航班延误","选择风格","古典","流行的","岩石",
-                    "电子","雷鬼","另类","被捕","我打"};
-                break;
+                token1 = "";
+                file_name = "C:/idiomas/chino.txt";
+                inFile1 = new Scanner(new File(file_name)).useDelimiter(",\\s*");
+                temps = new ArrayList<String>();
+                while (inFile1.hasNext()) {
+                  // find next line
+                  token1 = inFile1.next();
+                  temps.add(token1);
+                }
+                inFile1.close();    
+                tempsArray = temps.toArray(new String[0]);
+                this.palabras = tempsArray;
+                break;                
             case 2:
-                this.palabras = new String[] {"Bienvenido.","Continuar",
-                    "Información del vuelo","Capitán","Vuelo","Origen",
-                    "Hora de salida","Hora estimada de arribo","destino",
-                    "informacion de hora", "y clima en destino","Bienvenido a bordo.",
-                    "Azafata","El vuelo está demorado","Seleccione un género",
-                    "Clásica","Pop","Rock","Electrónica","Reggae","Alternativa",
-                    "Detenido","Reproduciendo"};
+                token1 = "";
+                file_name = "C:/idiomas/espaniol.txt";
+                inFile1 = new Scanner(new File(file_name)).useDelimiter(",\\s*");
+                temps = new ArrayList<String>();
+                while (inFile1.hasNext()) {
+                  // find next line
+                  token1 = inFile1.next();
+                  temps.add(token1);
+                }
+                inFile1.close();    
+                tempsArray = temps.toArray(new String[0]);
+                this.palabras = tempsArray;
                 break;
             case 3:
                 this.palabras = new String[] {"Добро пожаловать.","Продолжить",

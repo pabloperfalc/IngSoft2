@@ -4,6 +4,9 @@ import volandoAlto.dominio.Idioma;
 import volandoAlto.dominio.ReproductorMp3;
 import java.awt.Color;
 import java.awt.Font;
+import java.io.FileNotFoundException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -1001,56 +1004,88 @@ public class Cliente extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnInglesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInglesActionPerformed
-        this.idiomaActual.setIdiomaActual(0);
+        try {
+            this.idiomaActual.setIdiomaActual(0);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.cargarPalabras();
         this.lblBienvenido.setFont(new java.awt.Font("Segoe UI Light", 0, 75));
         this.lblContinuar.setFont(new java.awt.Font("Segoe UI Light", 0, 20));
     }//GEN-LAST:event_btnInglesActionPerformed
 
     private void btnChinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChinoActionPerformed
-        this.idiomaActual.setIdiomaActual(1);
+        try {
+            this.idiomaActual.setIdiomaActual(1);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.cargarPalabras();
         this.lblBienvenido.setFont(new Font("Arial Unicode MS", Font.BOLD, 75));
         this.lblContinuar.setFont(new Font("Arial Unicode MS", Font.BOLD, 20));
     }//GEN-LAST:event_btnChinoActionPerformed
 
     private void btnEspañolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEspañolActionPerformed
-        this.idiomaActual.setIdiomaActual(2);
+        try {
+            this.idiomaActual.setIdiomaActual(2);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.cargarPalabras();
         this.lblBienvenido.setFont(new java.awt.Font("Segoe UI Light", 0, 75));
         this.lblContinuar.setFont(new java.awt.Font("Segoe UI Light", 0, 20));
     }//GEN-LAST:event_btnEspañolActionPerformed
 
     private void btnRusoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRusoActionPerformed
-        this.idiomaActual.setIdiomaActual(3);
+        try {
+            this.idiomaActual.setIdiomaActual(3);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.cargarPalabras();
         this.lblBienvenido.setFont(new java.awt.Font("Segoe UI Light", 0, 75));
         this.lblContinuar.setFont(new java.awt.Font("Segoe UI Light", 0, 20));
     }//GEN-LAST:event_btnRusoActionPerformed
 
     private void btnArabeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArabeActionPerformed
-        this.idiomaActual.setIdiomaActual(4);
+        try {
+            this.idiomaActual.setIdiomaActual(4);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.cargarPalabras();
         this.lblBienvenido.setFont(new java.awt.Font("Segoe UI Light", 0, 75));
         this.lblContinuar.setFont(new java.awt.Font("Segoe UI Light", 0, 20));
     }//GEN-LAST:event_btnArabeActionPerformed
 
     private void btnPortugalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPortugalActionPerformed
-        this.idiomaActual.setIdiomaActual(5);
+        try {
+            this.idiomaActual.setIdiomaActual(5);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.cargarPalabras();
         this.lblBienvenido.setFont(new java.awt.Font("Segoe UI Light", 0, 75));
         this.lblContinuar.setFont(new java.awt.Font("Segoe UI Light", 0, 20));
     }//GEN-LAST:event_btnPortugalActionPerformed
 
     private void btnItaliaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnItaliaActionPerformed
-        this.idiomaActual.setIdiomaActual(6);
+        try {
+            this.idiomaActual.setIdiomaActual(6);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.cargarPalabras();
         this.lblBienvenido.setFont(new java.awt.Font("Segoe UI Light", 0, 75));
         this.lblContinuar.setFont(new java.awt.Font("Segoe UI Light", 0, 20));
     }//GEN-LAST:event_btnItaliaActionPerformed
 
     private void btnJaponActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJaponActionPerformed
-        this.idiomaActual.setIdiomaActual(7);
+        try {
+            this.idiomaActual.setIdiomaActual(7);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.cargarPalabras();
         this.pnlVuelo.setFont(Font.decode("Arial Unicode MS"));
         this.lblBienvenido.setFont(new Font("Arial Unicode MS", Font.BOLD, 75));
@@ -1058,14 +1093,22 @@ public class Cliente extends javax.swing.JFrame {
     }//GEN-LAST:event_btnJaponActionPerformed
 
     private void btnAlemanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlemanActionPerformed
-        this.idiomaActual.setIdiomaActual(8);
+        try {
+            this.idiomaActual.setIdiomaActual(8);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.cargarPalabras();
         this.lblBienvenido.setFont(new java.awt.Font("Segoe UI Light", 0, 75));
         this.lblContinuar.setFont(new java.awt.Font("Segoe UI Light", 0, 20));
     }//GEN-LAST:event_btnAlemanActionPerformed
 
     private void btnFrancesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFrancesActionPerformed
-        this.idiomaActual.setIdiomaActual(9);
+        try {
+            this.idiomaActual.setIdiomaActual(9);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.cargarPalabras();
         this.lblBienvenido.setFont(new java.awt.Font("Segoe UI Light", 0, 75));
         this.lblContinuar.setFont(new java.awt.Font("Segoe UI Light", 0, 20));
