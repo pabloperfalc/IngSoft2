@@ -1350,10 +1350,10 @@ public class Cliente extends javax.swing.JFrame {
                                String codigoVuelo,
                                String origen,
                                String destino,
-                               String horaSalida,
-                               String minutoSalida,
-                               String horaLlegada,
-                               String minutoLlegada,
+                               int horaSalida,
+                               int minutoSalida,
+                               int horaLlegada,
+                               int minutoLlegada,
                                boolean demorado){
         this.lblNombreCapitan.setText(nombreCapitan);
         this.lblCodigoVuelo.setText(codigoVuelo);
