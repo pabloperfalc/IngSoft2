@@ -437,10 +437,10 @@ public class Operario extends javax.swing.JFrame {
         else if(this.cmbOrigen.getSelectedItem().toString().equalsIgnoreCase(this.cmbDestino.getSelectedItem().toString())) {
             valido = false;
         }
-        else if(this.spnHoraSalida.getValue() != null) {
+        else if(this.spnHoraSalida.getValue() == null) {
             valido = false;
         }
-        else if(this.spnHoraLlegada.getValue() != null) {
+        else if(this.spnHoraLlegada.getValue() == null) {
             valido = false;
         }
         return valido;
