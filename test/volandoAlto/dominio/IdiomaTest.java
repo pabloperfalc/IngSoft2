@@ -6,6 +6,7 @@
 
 package volandoAlto.dominio;
 
+import java.io.FileNotFoundException;
 import volandoAlto.dominio.Idioma;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -76,7 +77,7 @@ public class IdiomaTest {
      *
      */
     @Test
-    public void testIngles() {
+    public void testIngles() throws FileNotFoundException {
         Idioma idioma = new Idioma();
         idioma.setIdiomaActual(0);
         assertEquals(idioma.getIdiomaActual(),0);
@@ -94,7 +95,7 @@ public class IdiomaTest {
      *
      */
     @Test
-    public void testChino() {
+    public void testChino() throws FileNotFoundException {
         Idioma idioma = new Idioma();
         idioma.setIdiomaActual(1);
         assertEquals(idioma.getIdiomaActual(),1);
@@ -109,7 +110,7 @@ public class IdiomaTest {
      *
      */
     @Test
-    public void testEspanol() {
+    public void testEspanol() throws FileNotFoundException {
         Idioma idioma = new Idioma();
         idioma.setIdiomaActual(2);
         assertEquals(idioma.getIdiomaActual(),2);
@@ -127,7 +128,7 @@ public class IdiomaTest {
      *
      */
     @Test
-    public void testRuso() {
+    public void testRuso() throws FileNotFoundException {
         Idioma idioma = new Idioma();
         idioma.setIdiomaActual(3);
         assertEquals(idioma.getIdiomaActual(),3);
@@ -145,7 +146,7 @@ public class IdiomaTest {
      *
      */
     @Test
-    public void testArabe() {
+    public void testArabe() throws FileNotFoundException {
         Idioma idioma = new Idioma();
         idioma.setIdiomaActual(4);
         assertEquals(idioma.getIdiomaActual(),4);
@@ -161,7 +162,7 @@ public class IdiomaTest {
      *
      */
     @Test
-    public void testPortugues() {
+    public void testPortugues() throws FileNotFoundException {
         Idioma idioma = new Idioma();
         idioma.setIdiomaActual(5);
         assertEquals(idioma.getIdiomaActual(),5);
@@ -179,7 +180,7 @@ public class IdiomaTest {
      *
      */
     @Test
-    public void testItaliano() {
+    public void testItaliano() throws FileNotFoundException {
         Idioma idioma = new Idioma();
         idioma.setIdiomaActual(6);
         assertEquals(idioma.getIdiomaActual(),6);
@@ -198,7 +199,7 @@ public class IdiomaTest {
      *
      */
     @Test
-    public void testJapones() {
+    public void testJapones() throws FileNotFoundException {
         Idioma idioma = new Idioma();
         idioma.setIdiomaActual(7);
         assertEquals(idioma.getIdiomaActual(),7);
@@ -214,7 +215,7 @@ public class IdiomaTest {
      *
      */
     @Test
-    public void testAleman() {
+    public void testAleman() throws FileNotFoundException {
         Idioma idioma = new Idioma();
         idioma.setIdiomaActual(8);
         assertEquals(idioma.getIdiomaActual(),8);
@@ -232,7 +233,7 @@ public class IdiomaTest {
      *
      */
     @Test
-    public void testFrances() {
+    public void testFrances() throws FileNotFoundException {
         Idioma idioma = new Idioma();
         idioma.setIdiomaActual(9);
         assertEquals(idioma.getIdiomaActual(),9);
